@@ -1,0 +1,18 @@
+{
+  "name": "netologytesttask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:cinema": "cypress run --spec cypress/e2e/cinema.spec.cy.js --record --key be704b43-4850-4759-9151-fbb70aab2263",
+    "test:admin": "cypress run --spec cypress/e2e/admin.spec.cy.js --record --key be704b43-4850-4759-9151-fbb70aab2263",
+    "test:parallel": "npm run test:cinema -- --browser chrome --group Spec1 --ci-build-id 1 & npm run test:admin -- --browser chrome --group Spec2 --ci-build-id 1"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.2.0"
+  }
+}
