@@ -1,10 +1,11 @@
 const goodAdmin = require("../fixtures/happy_admin.json");
 const wrongAdmin = require("../fixtures/wrong_admin.json");
 
-describe("Shold check admin login", () => {
+describe("Shold check admin login",  { defaultCommandTimeout: 6000 }, () => {
     it("Check success admin login", () => {
       cy.visit("http://qamid.tmweb.ru/admin/");
       cy.login(goodAdmin.login, goodAdmin.password);
+
       cy.get(".conf-step__title").should("contain.text", "Управление залами");
     });
   
