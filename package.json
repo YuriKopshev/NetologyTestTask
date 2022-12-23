@@ -6,7 +6,13 @@
   "scripts": {
     "test:cinema": "cypress run --spec cypress/e2e/cinema.spec.cy.js --record --key be704b43-4850-4759-9151-fbb70aab2263",
     "test:admin": "cypress run --spec cypress/e2e/admin.spec.cy.js --record --key be704b43-4850-4759-9151-fbb70aab2263",
-    "test:parallel": "npm run test:cinema -- --group Spec1 --ci-build-id 8 & npm run test:admin -- --group Spec2 --ci-build-id 8"
+    "test:parallel": "npm run test:cinema -- --group Spec1 --ci-build-id 8 & npm run test:admin -- --group Spec2 --ci-build-id 8",
+    "test:cinema-jen": "cypress run --spec cypress/e2e/spec1/cinema.spec.cy.js",
+    "test:admin-jen": "cypress run --spec cypress/e2e/spec2/admin.spec.cy.js",
+    "test:parallel-folder": "npm run test:cinema-jen --browser chrome & npm run test:admin-jen --browser edge",
+    "сy:run:chrome": "cypress run --browser chrome",
+    "сy:run:electron": "cypress run --browser chrome",
+    "сy:run:edge": "cypress run --browser chrome"
 
   },
   "keywords": [],
